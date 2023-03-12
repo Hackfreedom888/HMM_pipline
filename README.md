@@ -3,11 +3,11 @@ Extraction pipline of biosynthetic gene clusters (BGCs)
 Extraction of HMMER:
 #The porA1-A3 genes were trained through HMMER and all the protein sequences were placed in the protein folder.
 #Search genes through the HMMER v3.3.2, take the porA as an example:
-for i in `less protein.txt`
+for i in `less protein.txt`;
 do
         hmmsearch  --domtblout  result/${i}_porA1.tab  -E 0.00001  --domT 0.5 --noali --acc --notextw --cpu 4  SEED/porA/porA1.hmm   protein/${i}.faa
         hmmsearch  --domtblout  result/${i}_porA2.tab  -E 0.00001  --domT 0.5 --noali --acc --notextw --cpu 4  SEED/porA/porA2.hmm  protein/${i}.faa
-        hmmsearch  --domtblout  result/${i}_porA3.tab  -E 0.00001  --domT 0.5 --noali --acc --notextw --cpu 4  SEED/porA/porA3.hmm  protein/${i}.faa
+        hmmsearch  --domtblout  result/${i}_porA3.tab  -E 0.00001  --domT 0.5 --noali --acc --notextw --cpu 4  SEED/porA/porA3.hmm  protein/${i}.faa;
 done
 
 step1, HMMER information extraction(the score is set to 200):
